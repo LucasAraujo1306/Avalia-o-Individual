@@ -1,0 +1,272 @@
+/* Definindo variáveis de tema */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --header-footer-color-light: #007bff;
+  --header-footer-color-dark: #000000;
+  --text-color-light: #2f2f2f;
+  --text-color-dark: #FFFFFF;
+  --background-light: #FFFFFF;
+  --background-dark: #1A1A1A;
+}
+
+/* Tema padrão claro */
+body {
+  background-color: var(--background-light);
+  color: var(--text-color-light);
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  
+}
+
+/* Tema escuro */
+body.dark-theme {
+  background-color: var(--background-dark);
+  color: var(--text-color-dark);
+}
+
+/* Limita a largura máxima dos elementos principais para centralização */
+header, nav, section, article, footer {
+  width: 100%;
+  margin: 0 auto;
+}
+
+article{
+  max-width: 70%;
+}
+
+/* Estilo para Header */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--header-footer-color-light);
+  padding: 20px;
+  text-align: center;
+}
+
+body.dark-theme header {
+  background-color: var(--header-footer-color-dark);
+}
+
+/* Centralizando imagem no header */
+header img {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  margin-bottom: 10px;
+}
+
+/* Estilo para botão de alternar tema */
+#themeToggle {
+  padding: 8px 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  background-color: var(--text-color-light);
+  color: var(--background-light);
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-theme #themeToggle {
+  background-color: var(--text-color-dark);
+  color: var(--background-dark);
+}
+
+/* Estilo para Navegação */
+nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--text-color-light);
+  font-weight: bold;
+}
+
+
+body.dark-theme nav ul li a {
+  color: var(--text-color-dark);
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Estilo para Sections */
+section {
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+}
+
+section h2 {
+  color: var(--header-footer-color-light);
+  margin-bottom: 15px;
+}
+
+body.dark-theme section h2 {
+  color: var(--header-footer-dark);
+}
+
+/* Estilo para listas de habilidades */
+#habilidades ul, #habilidades_nao_tecnicas ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  background-color: transparent;
+  margin: 0 auto;
+}
+
+#habilidades ul li, #habilidades_nao_tecnicas ul li {
+  padding: 10px 20px;
+  background-color: var(--header-footer-color-light);
+  color: var(--text-color-light);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+  text-align: center;
+  font-weight: bold;
+  white-space: nowrap; 
+}
+
+body.dark-theme #habilidades ul li, body.dark-theme #habilidades_nao_tecnicas ul li {
+  background-color: var(--header-footer-color-dark);
+  color: var(--text-color-dark);
+}
+
+#habilidades ul li:hover, #habilidades_nao_tecnicas ul li:hover {
+  transform: scale(1.05);
+  background-color: var(--text-color-light);
+  color: var(--background-light);
+}
+
+body.dark-theme #habilidades ul li:hover, body.dark-theme #habilidades_nao_tecnicas ul li:hover {
+  background-color: var(--text-color-dark);
+  color: var(--background-dark);
+}
+
+/* Layout responsivo para telas menores */
+@media (max-width: 768px) {
+  #habilidades ul, #habilidades_nao_tecnicas ul {
+    flex-direction: column;
+  }
+}
+
+/* Estilo para Projetos */
+article {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s;
+  text-align: center;
+}
+
+article:hover {
+  transform: scale(1.05);
+}
+
+article h3 {
+  color: var(--header-footer-color-light);
+  margin-bottom: 10px;
+}
+
+body.dark-theme article h3 {
+  color: var(--header-footer-dark);
+}
+
+article img {
+  width: 100%;
+  height: 500px;
+  transition: transform 0.3s;
+  margin: auto;
+  margin: 20px 0px;
+}
+
+article:hover img {
+  transform: scale(1.1);
+  z-index: -1;
+}
+
+/* Estilo para Footer */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  background-color: var(--header-footer-color-light);
+  padding: 20px;
+  color: var(--text-color-light);
+  text-align: center;
+}
+
+body.dark-theme footer {
+  background-color: var(--header-footer-color-dark);
+  color: var(--text-color-dark);
+}
+
+/* Estilo para os itens de contato */
+footer div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+footer div img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+/* Ajuste de cores para links e texto */
+footer div p, footer div a {
+  margin: 0;
+  color: inherit; /* Herda a cor do texto */
+  text-decoration: none; /* Remove o sublinhado dos links */
+  font-weight: bold;
+}
+
+footer a {
+  color: var(--text-color-light);
+}
+
+body.dark-theme footer a {
+  color: var(--text-color-dark);
+}
+
+/* Layout responsivo */
+@media (min-width: 1100px) {
+  footer {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
